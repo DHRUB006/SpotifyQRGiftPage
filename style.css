@@ -18,10 +18,11 @@ body {
     width: 150px;
     height: 150px;
     fill: #1ED760;
+    animation: fadeIn 2s;
 }
 
 .qr-code {
-    animation: shadowPulse 3s infinite; 
+    animation: slideInUp 2s;
 }
 
 .qr-code img {
@@ -42,7 +43,7 @@ body {
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s; 
+    animation: slideInUp 2s;
 }
 
 .instructions p {
@@ -89,7 +90,7 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    animation: slideInRight 1s; /* Apply slide-in animation */
+    animation: slideInRight 1s;
 }
 
 #instagram-link a {
@@ -107,15 +108,12 @@ body {
     }
 }
 
-@keyframes shadowPulse {
-    0% {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
     }
-    50% {
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    }
-    100% {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    to {
+        transform: translateY(0);
     }
 }
 
@@ -126,12 +124,4 @@ body {
     to {
         transform: translateX(0);
     }
-}
-
-@font-face {
-    font-family: 'Wordwalker';
-    src: url('path-to-your-font-directory/wordwalker-font.woff2') format('woff2'),
-         url('path-to-your-font-directory/wordwalker-font.woff') format('woff'),
-         url('path-to-your-font-directory/wordwalker-font.ttf') format('truetype');
-    /* You can adjust the font file paths and formats as needed */
 }
